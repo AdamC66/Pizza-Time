@@ -1,7 +1,5 @@
 #Variable Declaration
-numpizzas=0
 current_order = []
-
 
 #Class creation
 class Pizza:
@@ -85,12 +83,12 @@ def display_order(current_order):
             print('*',topping)
         print(f"total price: ${item.calc_price()}.00\n")
 
-numpizzas=get_input("Please enter how many pizza\'s you would like to order")
 
-for i in range(numpizzas):
+for i in range(get_input("Please enter how many pizza\'s you would like to order")
+):
     current_order.append(Pizza(name=f'Pizza {i+1}'))
 
-for i in range(numpizzas):
+for i in range(len(current_order)):
     current_order[i].num_toppings= get_input(f'How many toppings would you like on {current_order[i].name}')
 
 get_size(current_order)
